@@ -38,6 +38,26 @@ def duel(game):
 """
 Move these to Utils 
 """
+def get_paths_to_zero(game):
+    maxlen = game.get
+    curr = [[game.get_self().location]]
+    dist = 0
+    while dist < maxdist:
+        next = []
+        for elem in curr:
+            neighbors = game.get_adjacent_nodes(elem[-1])
+            for neighbor in neighbors:
+                copy = elem.copy()
+                copy.append(neighbor)
+                next.append(copy)
+    
+    paths = []
+    for path in curr:
+        if path[-1] == 0:
+            paths.append(path)
+            
+    return paths
+    
 def initialize_paths(game): 
     paths = [] 
     for path in utils.cycles: 
