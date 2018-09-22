@@ -33,6 +33,39 @@ def duel(game):
     else:
         chosen_stance = stances[2]
 
+"""
+Move these to Utils 
+"""
+def initialize_paths(game): 
+    paths = [] 
+    for path in utils.cycles: 
+        paths.append(utils.Path(path, game))
+    return paths
+
+def rank_paths(paths, game): 
+    path_rankings = dict()
+    for index in range(len(paths)): 
+        path_rankings[index] = paths[index].evaluate_path_score(game)
+    sort = sorted(path_rankings.items(), key = lambda x: x[1], reverse = True)
+    return paths[sort[0][0]]
+    # return [x[0] for x in sort]
+
+def select_path(paths, game):   
+    ranking = rank_paths(paths, game)
+    return ranking[0] # Greedy selection -> maybe do something more sophisticated later
+
+def get_strongest_stance(player): 
+    if player.paper >= player.rock and player.paper >= player.scissors:
+        return "Paper"
+    elif player.scissors >= player.rock and player.scissors > player.paper:
+        return "Scissors"
+    else: 
+        return "Rock"
+
+next_node_index = -1
+path = None 
+paths = None 
+
 # main player script logic
 # DO NOT CHANGE BELOW ----------------------------
 for line in fileinput.input():
@@ -45,8 +78,45 @@ for line in fileinput.input():
 
     # code in this block will be executed each turn of the game
 
+    op = game.get_opponent()
     me = game.get_self()
-    opponent = game.get_opponent()
+
+    if paths == None: 
+        paths = initialize_paths(game)
+    if path == None: 
+        path = rank_paths(paths, game)
+
+    """ 
+    Code for choosing stance
+    """ 
+    current_monster = game.get_monster(me.location) 
+    if me.movement_counter == me.speed + 1: # We are going to move next turn 
+        next_monster = game.get_monster(me.destination)
+        if not next_monster.dead: 
+            chose_stance = utils.stance_counters[next_monster.stance]
+    else: 
+        if not current_monster.dead: 
+            chosen_stance = utils.stance_counters[current_monster.stance]
+        else: 
+            chose_stance = get_strongest_stance(me)
+
+
+    """ 
+    Code for determining the next destination
+    """
+    for i in range(path.length): 
+       game.log(str(path[i]))
+
+    if me.location == me.destination: 
+        if me.location == 0: 
+            path = rank_paths(paths, game) 
+            next_node_index = 0 
+            destination_node = path[next_node_index]
+        else: 
+            next_node_index += 1 
+            destination_node = path[next_node_index]
+    else: 
+        destination_node = path[next_node_index] # This could be made more efficient for sure 
 
     turn_counter += 1
 
@@ -55,8 +125,6 @@ for line in fileinput.input():
 
     if turn_counter > 300: 
         duel(game) 
-
-
 
 """ 
     if me.location == me.destination: # check if we have moved this turn
