@@ -145,7 +145,8 @@ class Path:
 		Allows us to rank this path based on current board conditions 
 		This is hard
 		"""
-		pass 
+
+
 
 
 def get_player_strength(player, stance): 
