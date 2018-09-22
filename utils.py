@@ -140,11 +140,86 @@ class Path:
 		else: 
 			return False		
 
-	def evaluate_path_score(self): 
+	def evaluate_path_score(self, game):
 		"""
 		Allows us to rank this path based on current board conditions 
 		This is hard
 		"""
+		monsters = game.get_all_monsters()
+		my_monsters = []
+		for node in self.path:
+			my_monsters.append(game.get_monster(node))
+
+		# my_monsters[i].dead
+		player = game.get_self()
+
+
+		weight_sum = 0
+
+		for node in self.path:
+			monster = my_monsters[node]
+			stance = stance_counters[monster.stance]
+			if stance is 'Rock':
+				attack = player.rock
+			elif stance is 'Paper':
+				attack = player.paper
+			elif stance is 'Scissors':
+				attack = player.scissors
+
+			speed = player.speed
+
+
+			val = weight_cal(monster, attack, speed)
+			weight_sum = weight_sum + val
+
+		return weight_sum
+
+	def weight_cal(monster, attack, speed):
+		hp_loss = hp_loss(monster, attack, speed)
+		R_gain, P_gain, S_gain, Spd_gain = gain(monster, attack, speed)
+		time = time_spend(monster, attack, speed)
+
+		score = (-10) * hp_loss + 3 * (R_gain + P_gain + S_gain) + 5 * Spd_gain + (-2) * time
+
+		return score
+
+
+	def time_spend(monster, attack, speed):
+		# attack value is the corresponding resources you have
+		move_time = 7 - speed
+		kill_time = monster.health/ attack
+
+		if move_time <= kill_time:
+			time = move_time
+		else:
+			time = kill_time
+		return time
+
+	def hp_loss(monster, attack, speed):
+		time = time_spend(monster, attack, speed)
+		hp_loss = monster.attack * time
+
+		return hp_loss
+
+	def gain(monster, attack, speed):
+		move_time = 7 - speed
+		kill_time = monster.Health / attack
+
+		if move_time <= kill_time:
+			R_gain = 0
+			P_gain = 0
+			S_gain = 0
+			Spd_gain = 0
+		else:
+			R_gain = monster.death_effects.rock
+			P_gain = monster.death_effects.paper
+			S_gain = monster.death_effects.scissors
+			Spd_gain = monster.death_effects.speed
+
+		return R_gain, P_gain, S_gain, Spd_gain
+
+
+
 
 
 
