@@ -14,8 +14,26 @@ first_node = True # Used for decision making on the first node
 turn_counter = 0 
 
 
-def duel(): 
-    pass 
+def duel(game): 
+    # https://math.stackexchange.com/questions/803488/optimal-strategy-for-rock-paper-scissors-with-different-rewards
+    # First try
+    # Reward metric for a move is move damage - enemy trumping move damage
+    op = game.get_opponent()
+    me = game.get_self()
+    
+    rock_weight = me.rock - op.paper
+    paper_weight = me.paper - op.scissors
+    scissors_weight = me.scissors - op.rock
+    
+    rand = random.randint(1, rock_weight + paper_weight + scissors_weight)
+    chosen_stance = null
+    if rand <= rock_weight:
+        chosen_stance = stances[0]
+    elif rand <= rock_weight + paper_weight:
+        chosen_stance = stances[1]
+    else:
+        chosen_stance = stances[2]
+    
 
 # main player script logic
 # DO NOT CHANGE BELOW ----------------------------
@@ -38,7 +56,7 @@ for line in fileinput.input():
     game.submit_decision(destination_node, chosen_stance)
 
     if turn_counter > 300: 
-        duel() 
+        duel(game) 
 
 
 
