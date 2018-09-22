@@ -12,8 +12,6 @@ stance_counters = {"Rock": "Paper",
 					"Paper": "Scissors",
 					"Scissors", "Rock"}
 
-
-# Update this later, just using these three for now 
 cycles = [['Node_6', 'Node_7', 'Node_8', 'Node_9', 'Node_10', 'Node_0'], 
 		  ['Node_1', 'Node_2', 'Node_4', 'Node_5', 'Node_6', 'Node_0'], 
 		  ['Node_6', 'Node_5', 'Node_4', 'Node_2', 'Node_1', 'Node_0'], 
@@ -69,9 +67,8 @@ cycles = [['Node_6', 'Node_7', 'Node_8', 'Node_9', 'Node_10', 'Node_0'],
 		  
 class Path: 
 	"""
-	A class that 
+	A class that represents a path through a sequence of nodes 
 	"""
-
 	def __init__(self, nodes, game):
 		"""
 		Nodes can just be the list of strings from the cycles global variable 
@@ -91,6 +88,57 @@ class Path:
 
 	def move_next_node(self):
 		self.current_node += 1
+
+	""" 
+	Overloading comparison operators
+	"""
+	def __lt__(self, other):
+		ps_self = self.evaluate_path_score()
+		ps_other = other.evaluate_path_score()
+		if ps_self < ps_other: 
+			return True 
+		else: 
+			return False
+
+	def __le__(self, other): 
+		ps_self = self.evaluate_path_score()
+		ps_other = other.evaluate_path_score()
+		if ps_self <= ps_other: 
+			return True 
+		else: 
+			return False
+
+	def __gt__(self, other):
+		ps_self = self.evaluate_path_score()
+		ps_other = other.evaluate_path_score()
+		if ps_self > ps_other: 
+			return True 
+		else: 
+			return False
+
+	def __ge__(self, other): 
+		ps_self = self.evaluate_path_score()
+		ps_other = other.evaluate_path_score()
+		if ps_self >= ps_other: 
+			return True 
+		else: 
+			return False
+
+	def __eq__(self, other):
+		ps_self = self.evaluate_path_score()
+		ps_other = other.evaluate_path_score()
+		if ps_self == ps_other: 
+			return True 
+		else: 
+			return False		
+
+	def __ne__(self, other): 
+		ps_self = self.evaluate_path_score()
+		ps_other = other.evaluate_path_score()
+		if ps_self != ps_other: 
+			return True 
+		else: 
+			return False		
 
 	def evaluate_path_score(self): 
 		"""
