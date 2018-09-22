@@ -14,9 +14,37 @@ stance_counters = {"Rock": "Paper",
 
 
 # Update this later, just using these three for now 
-cycles = [["Node_1", "Node_3", "Node_2", "Node_4", "Node_5", "Node_6", "Node_0"],
-            ["Node_10", "Node_11", "Node_12", "Node_13", "Node_14", "Node_8", "Node_7", "Node_6", "Node_0"],
-            ["Node_6", "Node_7", "Node_8", "Node_9", "Node_10", "Node_0"]]
+cycles = [['Node_6', 'Node_7', 'Node_8', 'Node_9', 'Node_10', 'Node_0'], 
+		  ['Node_1', 'Node_2', 'Node_4', 'Node_5', 'Node_6', 'Node_0'], 
+		  ["Node_1", 'Node_3', "Node_2", "Node_4", "Node_5", "Node_6", "Node_0"],
+		  ['Node_6', 'Node_5', 'Node_4', 'Node_13', 'Node_12', 'Node_11', 'Node_10', 'Node_0'], 
+		  ['Node_1', 'Node_2', 'Node_4', 'Node_13', 'Node_12', 'Node_11', 'Node_10', 'Node_0'], 
+		  ['Node_1', 'Node_3', 'Node_2', 'Node_4', 'Node_13', 'Node_12', 'Node_11', 'Node_10', 'Node_0'], 
+		  ['Node_6', 'Node_5', 'Node_4', 'Node_13', 'Node_14', 'Node_8', 'Node_9', 'Node_10', 'Node_0'], 
+		  ['Node_1', 'Node_2', 'Node_4', 'Node_13', 'Node_14', 'Node_8', 'Node_9', 'Node_10', 'Node_0'], 
+		  ['Node_1', 'Node_2', 'Node_4', 'Node_13', 'Node_14', 'Node_8', 'Node_7', 'Node_6', 'Node_0'], 
+		  ['Node_6', 'Node_7', 'Node_8', 'Node_14', 'Node_13', 'Node_12', 'Node_11', 'Node_10', 'Node_0'], 
+		  ['Node_1', 'Node_3', 'Node_2', 'Node_4', 'Node_13', 'Node_12', 'Node_16', 'Node_10', 'Node_0'],
+		  ['Node_1', 'Node_3', 'Node_2', 'Node_4', 'Node_13', 'Node_14', 'Node_8', 'Node_9', 'Node_10', 'Node_0'], 
+		  ['Node_1', 'Node_3', 'Node_2', 'Node_4', 'Node_13', 'Node_14', 'Node_8', 'Node_7', 'Node_6', 'Node_0'], 
+		  ['Node_6', 'Node_5', 'Node_4', 'Node_13', 'Node_20', 'Node_21', 'Node_22', 'Node_12', 'Node_16', 'Node_10', 'Node_0'], 
+		  ['Node_1', 'Node_2', 'Node_4', 'Node_13', 'Node_20', 'Node_21', 'Node_22', 'Node_12', 'Node_16', 'Node_10', 'Node_0'], 
+		  ['Node_6', 'Node_7', 'Node_8', 'Node_14', 'Node_19', 'Node_20', 'Node_13', 'Node_12', 'Node_16', 'Node_10', 'Node_0'], 
+		  ['Node_6', 'Node_5', 'Node_4', 'Node_13', 'Node_20', 'Node_19', 'Node_22', 'Node_12', 'Node_16', 'Node_10', 'Node_0'], 
+		  ['Node_1', 'Node_2', 'Node_4', 'Node_13', 'Node_20', 'Node_19', 'Node_22', 'Node_12', 'Node_16', 'Node_10', 'Node_0'], 
+		  ['Node_6', 'Node_5', 'Node_4', 'Node_13', 'Node_12', 'Node_16', 'Node_10', 'Node_0', 'Node_10', 'Node_0', 'Node_10'], 
+		  ['Node_1', 'Node_3', 'Node_2', 'Node_4', 'Node_13', 'Node_20', 'Node_21', 'Node_22', 'Node_12', 'Node_16', 'Node_10', 'Node_0'],
+		  ['Node_1', 'Node_3', 'Node_2', 'Node_4', 'Node_13', 'Node_20', 'Node_19', 'Node_22', 'Node_12', 'Node_16', 'Node_10', 'Node_0'], 
+		  ['Node_6', 'Node_5', 'Node_4', 'Node_13', 'Node_12', 'Node_16', 'Node_17', 'Node_18', 'Node_15', 'Node_16', 'Node_10', 'Node_0'], 
+		  ['Node_1', 'Node_2', 'Node_4', 'Node_13', 'Node_12', 'Node_16', 'Node_17', 'Node_18', 'Node_15', 'Node_16', 'Node_10', 'Node_0'], 
+		  ['Node_6', 'Node_7', 'Node_8', 'Node_14', 'Node_13', 'Node_20', 'Node_21', 'Node_22', 'Node_12', 'Node_16', 'Node_10', 'Node_0'], 
+		  ['Node_6', 'Node_5', 'Node_4', 'Node_13', 'Node_20', 'Node_19', 'Node_14', 'Node_13', 'Node_12', 'Node_16', 'Node_10', 'Node_0'], 
+		  ['Node_1', 'Node_2', 'Node_4', 'Node_13', 'Node_20', 'Node_19', 'Node_14', 'Node_13', 'Node_12', 'Node_16', 'Node_10', 'Node_0'], 
+		  ['Node_6', 'Node_7', 'Node_8', 'Node_14', 'Node_13', 'Node_20', 'Node_19', 'Node_22', 'Node_12', 'Node_16', 'Node_10', 'Node_0'], 
+		  ['Node_6', 'Node_7', 'Node_8', 'Node_14', 'Node_13', 'Node_12', 'Node_16', 'Node_10', 'Node_0', 'Node_10', 'Node_0', 'Node_10'], 
+		  ['Node_1', 'Node_3', 'Node_2', 'Node_4', 'Node_13', 'Node_12', 'Node_16', 'Node_17', 'Node_18', 'Node_15', 'Node_16', 'Node_10', 'Node_0'],
+ 		  ['Node_1', 'Node_3', 'Node_2', 'Node_4', 'Node_13', 'Node_20', 'Node_19', 'Node_14', 'Node_13', 'Node_12', 'Node_16', 'Node_10', 'Node_0'], 
+		  ['Node_6', 'Node_7', 'Node_8', 'Node_14', 'Node_13', 'Node_12', 'Node_16', 'Node_17', 'Node_18', 'Node_15', 'Node_16', 'Node_10', 'Node_0']]
 
 class Path: 
 	"""
