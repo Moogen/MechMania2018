@@ -1,0 +1,10 @@
+Notes:
+- Use networkx to find valid cycles coming from 0 and hard code them 
+- Need a function to evaluate rankings for the cycles when we are at 0 -> pursue the one that returns the highest value 
+
+Basic Pseudocode: 
+- When at 0 node: 
+	- Generate rankings for all of the cycles. Pick the highest ranking cycle. This becomes the next path. 
+- For each node on the path, switch your stance to fight the opponent on that node. 
+	- If there is no opponent on the node, simply switch to strongest stance (or figure out a better rule for idling, idk) 
+-  After 300 turns, switch to dueling 

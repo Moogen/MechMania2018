@@ -7,18 +7,15 @@ import json
 import random
 import utils
 
-first_line = True # DO NOT REMOVE
-
-# global variables or other functions can go here
 stances = ["Rock", "Paper", "Scissors"]
 
-def get_winning_stance(stance):
-    if stance == "Rock":
-        return "Paper"
-    elif stance == "Paper":
-        return "Scissors"
-    elif stance == "Scissors":
-        return "Rock"
+first_line = True # DO NOT REMOVE
+first_node = True # Used for decision making on the first node 
+turn_counter = 0 
+
+
+def duel(): 
+    pass 
 
 # main player script logic
 # DO NOT CHANGE BELOW ----------------------------
@@ -33,7 +30,19 @@ for line in fileinput.input():
     # code in this block will be executed each turn of the game
 
     me = game.get_self()
+    opponent = game.get_opponent()
 
+    turn_counter += 1
+
+    # submit your decision for the turn (This function should be called exactly once per turn)
+    game.submit_decision(destination_node, chosen_stance)
+
+    if turn_counter > 300: 
+        duel() 
+
+
+
+""" 
     if me.location == me.destination: # check if we have moved this turn
         # get all living monsters closest to me
         monsters = game.nearest_monsters(me.location, 1)
@@ -53,6 +62,4 @@ for line in fileinput.input():
     else:
         # otherwise, pick a random stance
         chosen_stance = stances[random.randint(0, 2)]
-
-    # submit your decision for the turn (This function should be called exactly once per turn)
-    game.submit_decision(destination_node, chosen_stance)
+"""
