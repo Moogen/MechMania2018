@@ -13,6 +13,10 @@ first_line = True # DO NOT REMOVE
 first_node = True # Used for decision making on the first node 
 turn_counter = 0 
 
+# Update this later, just using these three for now 
+cycles_0 = [["Node_1", "Node_3", "Node_2", "Node_4", "Node_5", "Node_6", "Node_0"],
+            [],
+            []]
 
 def duel(game): 
     # https://math.stackexchange.com/questions/803488/optimal-strategy-for-rock-paper-scissors-with-different-rewards
