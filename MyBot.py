@@ -48,7 +48,6 @@ def rank_paths(paths, game):
         path_rankings[index] = paths[index].evaluate_path_score(game)
     sort = sorted(path_rankings.items(), key = lambda x: x[1], reverse = True)
     return paths[sort[0][0]]
-    # return [x[0] for x in sort]
 
 def select_path(paths, game):   
     ranking = rank_paths(paths, game)
@@ -107,17 +106,14 @@ for line in fileinput.input():
     for i in range(path.length): 
        game.log(str(path[i]))
 
-    if me.location == me.destination: 
+    if me.location == me.destination: # We just finished moving
         if me.location == 0: 
             path = rank_paths(paths, game) 
             next_node_index = 0 
-            destination_node = path[next_node_index]
         else: 
             next_node_index += 1 
-            destination_node = path[next_node_index]
-    else: 
-        destination_node = path[next_node_index] # This could be made more efficient for sure 
 
+    destination_node = path[next_node_index]
     turn_counter += 1
 
     # submit your decision for the turn (This function should be called exactly once per turn)
@@ -125,25 +121,3 @@ for line in fileinput.input():
 
     if turn_counter > 300: 
         duel(game) 
-
-""" 
-    if me.location == me.destination: # check if we have moved this turn
-        # get all living monsters closest to me
-        monsters = game.nearest_monsters(me.location, 1)
-
-        # choose a monster to move to at random
-        monster_to_move_to = monsters[random.randint(0, len(monsters)-1)]
-
-        # get the set of shortest paths to that monster
-        paths = game.shortest_paths(me.location, monster_to_move_to.location)
-        destination_node = paths[random.randint(0, len(paths)-1)][0]
-    else:
-        destination_node = me.destination
-
-    if game.has_monster(me.location):
-        # if there's a monster at my location, choose the stance that damages that monster
-        chosen_stance = get_winning_stance(game.get_monster(me.location).stance)
-    else:
-        # otherwise, pick a random stance
-        chosen_stance = stances[random.randint(0, 2)]
-"""
