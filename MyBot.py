@@ -52,7 +52,7 @@ def get_paths_to_zero(game):
                 copy.append(neighbor)
                 next.append(copy)
         curr = next
-        dist++
+        dist += 1
     
     paths = []
     for path in curr:
@@ -110,12 +110,14 @@ for line in fileinput.input():
     op = game.get_opponent()
     me = game.get_self()
     
+    """
     if game.get_monster(0).dead and health_respawn_timer == -1:
         health_respawn_timer = 7 - game.get_monster(0).speed
     else if game.get_monster(0).dead:
         health_respawn_timer--
     else:
         health_respawn_timer = -1
+    """
 
     if paths == None: 
         paths = initialize_paths(game)
@@ -154,7 +156,7 @@ for line in fileinput.input():
     turn_counter += 1
 
     # submit your decision for the turn (This function should be called exactly once per turn)
-    if turn_count > 300:
+    if turn_counter > 300:
         duel(game)
     else:
         game.submit_decision(destination_node, chosen_stance)
