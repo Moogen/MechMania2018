@@ -12,6 +12,7 @@ stances = ["Rock", "Paper", "Scissors"]
 first_line = True # DO NOT REMOVE
 first_node = True # Used for decision making on the first node 
 turn_counter = 0 
+health_respawn_timer = -1
 
 def duel(game): 
     # https://math.stackexchange.com/questions/803488/optimal-strategy-for-rock-paper-scissors-with-different-rewards
@@ -39,7 +40,7 @@ def duel(game):
 Move these to Utils 
 """
 def get_paths_to_zero(game):
-    maxlen = game.get
+    maxdist = health_respawn_timer / (7 - game.get_self().speed)
     curr = [[game.get_self().location]]
     dist = 0
     while dist < maxdist:
@@ -50,6 +51,8 @@ def get_paths_to_zero(game):
                 copy = elem.copy()
                 copy.append(neighbor)
                 next.append(copy)
+        curr = next
+        dist++
     
     paths = []
     for path in curr:
@@ -101,6 +104,13 @@ for line in fileinput.input():
 
     op = game.get_opponent()
     me = game.get_self()
+    
+    if game.get_monster(0).dead and health_respawn_timer == -1:
+        health_respawn_timer = 7 - game.get_monster(0).speed
+    else if game.get_monster(0).dead:
+        health_respawn_timer--
+    else:
+        health_respawn_timer = -1
 
     if paths == None: 
         paths = initialize_paths(game)
