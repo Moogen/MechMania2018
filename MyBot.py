@@ -32,6 +32,8 @@ def duel(game):
         chosen_stance = stances[1]
     else:
         chosen_stance = stances[2]
+        
+    game.submit_decision(0, chosen_stance)
 
 """
 Move these to Utils 
@@ -117,7 +119,7 @@ for line in fileinput.input():
     turn_counter += 1
 
     # submit your decision for the turn (This function should be called exactly once per turn)
-    game.submit_decision(destination_node, chosen_stance)
-
-    if turn_counter > 300: 
-        duel(game) 
+    if turn_count > 300:
+        duel(game)
+    else:
+        game.submit_decision(destination_node, chosen_stance)
