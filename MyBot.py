@@ -21,9 +21,9 @@ def duel(game):
     op = game.get_opponent()
     me = game.get_self()
     
-    rock_weight = me.rock - op.paper
-    paper_weight = me.paper - op.scissors
-    scissors_weight = me.scissors - op.rock
+    rock_weight = me.rock - op.paper if me.rock - op.paper > 0 else 1
+    paper_weight = me.paper - op.scissors if me.paper - op.scissors > 0 else 1
+    scissors_weight = me.scissors - op.rock if me.scissors - op.rock > 0 else 1
     
     rand = random.randint(1, rock_weight + paper_weight + scissors_weight)
     chosen_stance = null
