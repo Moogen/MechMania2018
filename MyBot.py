@@ -71,18 +71,14 @@ def rank_paths(paths, game):
     path_rankings = dict()
     for index in range(len(paths)): 
         path_rankings[index] = paths[index].evaluate_path_score(game)
-        # game.log("{}              {}".format(index, paths[index].evaluate_path_score(game)))
-    # for k, v in path_rankings.items(): 
-    #     game.log("Path ", k, ": ", paths[k])
+        # game.log("Path {} score: {}".format(index, paths[index].evaluate_path_score(game)))
     sort = sorted(path_rankings.items(), key = lambda x: x[1], reverse = True)
-    # game.log(str(sort))
-    # game.log(str(paths[sort[0][0]]))
     return paths[sort[0][0]]
 
 def select_path(paths, game):   
     ranking = rank_paths(paths, game)
     return ranking[0] # Greedy selection -> maybe do something more sophisticated later
-
+    game.log(ranking[0])
 def get_strongest_stance(player): 
     if player.paper >= player.rock and player.paper >= player.scissors:
         return "Paper"
@@ -142,9 +138,6 @@ for line in fileinput.input():
     """ 
     Code for determining the next destination
     """
-    # for i in range(path.length): 
-    #    game.log(str(path[i]))
-
     if me.location == me.destination: # We just finished moving
         if me.location == 0: 
             path = rank_paths(paths, game) 

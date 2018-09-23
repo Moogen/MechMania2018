@@ -16,64 +16,17 @@ stance_counters = {"Rock": "Paper",
 possible_paths = [['Node_1', 'Node_3', 'Node_2', 'Node_3', 'Node_1', 'Node_0'],
 					['Node_1', 'Node_3', 'Node_1', 'Node_0'],
 					['Node_1', 'Node_3', 'Node_2', 'Node_4', 'Node_2', 'Node_3', 'Node_1', 'Node_0'],
+					['Node_1', 'Node_0'],
 					['Node_10', 'Node_0'],
 					['Node_6', 'Node_0'],
 					['Node_10', 'Node_9', 'Node_8', 'Node_9', 'Node_10', 'Node_0'],
-					['Node_10', 'Node_11', 'Node_12', 'Node_11', 'Node_10', 'Node_0'],
 					['Node_6', 'Node_7', 'Node_8', 'Node_7', 'Node_6', 'Node_0'],
 					['Node_6', 'Node_5', 'Node_4', 'Node_5', 'Node_6', 'Node_0'],
 					['Node_6', 'Node_7', 'Node_8', 'Node_9', 'Node_10', 'Node_0'], 
 					['Node_1', 'Node_2', 'Node_4', 'Node_5', 'Node_6', 'Node_0'], 
 					['Node_6', 'Node_5', 'Node_4', 'Node_2', 'Node_1', 'Node_0'], 
 					['Node_10', 'Node_9', 'Node_8', 'Node_7', 'Node_6', 'Node_0'], 
-					["Node_1", 'Node_3', "Node_2", "Node_4", "Node_5", "Node_6", "Node_0"],
-					['Node_6', 'Node_5', 'Node_4', 'Node_13', 'Node_12', 'Node_11', 'Node_10', 'Node_0'], 
-					['Node_1', 'Node_2', 'Node_4', 'Node_13', 'Node_12', 'Node_11', 'Node_10', 'Node_0'], 
-					['Node_10', 'Node_11', 'Node_12', 'Node_13', 'Node_4', 'Node_5', 'Node_6', 'Node_0'], 
-					['Node_10', 'Node_11', 'Node_12', 'Node_13', 'Node_4', 'Node_2', 'Node_1', 'Node_0'], 
-					['Node_1', 'Node_3', 'Node_2', 'Node_4', 'Node_13', 'Node_12', 'Node_11', 'Node_10', 'Node_0'], 
-					['Node_6', 'Node_5', 'Node_4', 'Node_13', 'Node_14', 'Node_8', 'Node_9', 'Node_10', 'Node_0'], 
-					['Node_1', 'Node_2', 'Node_4', 'Node_13', 'Node_14', 'Node_8', 'Node_9', 'Node_10', 'Node_0'], 
-					['Node_1', 'Node_2', 'Node_4', 'Node_13', 'Node_14', 'Node_8', 'Node_7', 'Node_6', 'Node_0'], 
-					['Node_10', 'Node_9', 'Node_8', 'Node_14', 'Node_13', 'Node_4', 'Node_5', 'Node_6', 'Node_0'], 
-					['Node_10', 'Node_9', 'Node_8', 'Node_14', 'Node_13', 'Node_4', 'Node_2', 'Node_1', 'Node_0'],
-					['Node_6', 'Node_7', 'Node_8', 'Node_14', 'Node_13', 'Node_4', 'Node_2', 'Node_1', 'Node_0'], 
-					['Node_10', 'Node_16', 'Node_12', 'Node_13', 'Node_4', 'Node_2', 'Node_3', 'Node_1', 'Node_0'],
-					['Node_6', 'Node_7', 'Node_8', 'Node_14', 'Node_13', 'Node_12', 'Node_11', 'Node_10', 'Node_0'], 
-					['Node_1', 'Node_3', 'Node_2', 'Node_4', 'Node_13', 'Node_12', 'Node_16', 'Node_10', 'Node_0'],
-					['Node_10', 'Node_11', 'Node_12', 'Node_13', 'Node_14', 'Node_8', 'Node_7', 'Node_6', 'Node_0'], 
-					['Node_1', 'Node_3', 'Node_2', 'Node_4', 'Node_13', 'Node_14', 'Node_8', 'Node_9', 'Node_10', 'Node_0'], 
-					['Node_1', 'Node_3', 'Node_2', 'Node_4', 'Node_13', 'Node_14', 'Node_8', 'Node_7', 'Node_6', 'Node_0'], 
-					['Node_10', 'Node_16', 'Node_12', 'Node_22', 'Node_19', 'Node_20', 'Node_13', 'Node_4', 'Node_5', 'Node_6', 'Node_0'], 
-					['Node_10', 'Node_16', 'Node_12', 'Node_22', 'Node_19', 'Node_20', 'Node_13', 'Node_4', 'Node_2', 'Node_1', 'Node_0'], 
-					['Node_6', 'Node_5', 'Node_4', 'Node_13', 'Node_20', 'Node_21', 'Node_22', 'Node_12', 'Node_16', 'Node_10', 'Node_0'], 
-					['Node_1', 'Node_2', 'Node_4', 'Node_13', 'Node_20', 'Node_21', 'Node_22', 'Node_12', 'Node_16', 'Node_10', 'Node_0'], 
-					['Node_6', 'Node_7', 'Node_8', 'Node_14', 'Node_19', 'Node_20', 'Node_13', 'Node_12', 'Node_16', 'Node_10', 'Node_0'], 
-					['Node_6', 'Node_5', 'Node_4', 'Node_13', 'Node_20', 'Node_19', 'Node_22', 'Node_12', 'Node_16', 'Node_10', 'Node_0'], 
-					['Node_1', 'Node_2', 'Node_4', 'Node_13', 'Node_20', 'Node_19', 'Node_22', 'Node_12', 'Node_16', 'Node_10', 'Node_0'], 
-					['Node_6', 'Node_5', 'Node_4', 'Node_13', 'Node_12', 'Node_16', 'Node_10', 'Node_0', 'Node_10', 'Node_0', 'Node_10'], 
-					['Node_10', 'Node_16', 'Node_12', 'Node_22', 'Node_21', 'Node_20', 'Node_13', 'Node_4', 'Node_5', 'Node_6', 'Node_0'], 
-					['Node_10', 'Node_16', 'Node_12', 'Node_22', 'Node_21', 'Node_20', 'Node_13', 'Node_4', 'Node_2', 'Node_1', 'Node_0'], 
-					['Node_10', 'Node_16', 'Node_12', 'Node_13', 'Node_20', 'Node_19', 'Node_14', 'Node_8', 'Node_7', 'Node_6', 'Node_0'], 
-					['Node_1', 'Node_3', 'Node_2', 'Node_4', 'Node_13', 'Node_20', 'Node_21', 'Node_22', 'Node_12', 'Node_16', 'Node_10', 'Node_0'],
-					['Node_1', 'Node_3', 'Node_2', 'Node_4', 'Node_13', 'Node_20', 'Node_19', 'Node_22', 'Node_12', 'Node_16', 'Node_10', 'Node_0'], 
-					['Node_6', 'Node_5', 'Node_4', 'Node_13', 'Node_12', 'Node_16', 'Node_17', 'Node_18', 'Node_15', 'Node_16', 'Node_10', 'Node_0'], 
-					['Node_1', 'Node_2', 'Node_4', 'Node_13', 'Node_12', 'Node_16', 'Node_17', 'Node_18', 'Node_15', 'Node_16', 'Node_10', 'Node_0'], 
-					['Node_6', 'Node_7', 'Node_8', 'Node_14', 'Node_13', 'Node_20', 'Node_21', 'Node_22', 'Node_12', 'Node_16', 'Node_10', 'Node_0'], 
-					['Node_6', 'Node_5', 'Node_4', 'Node_13', 'Node_20', 'Node_19', 'Node_14', 'Node_13', 'Node_12', 'Node_16', 'Node_10', 'Node_0'], 
-					['Node_1', 'Node_2', 'Node_4', 'Node_13', 'Node_20', 'Node_19', 'Node_14', 'Node_13', 'Node_12', 'Node_16', 'Node_10', 'Node_0'], 
-					['Node_6', 'Node_7', 'Node_8', 'Node_14', 'Node_13', 'Node_20', 'Node_19', 'Node_22', 'Node_12', 'Node_16', 'Node_10', 'Node_0'], 
-					['Node_6', 'Node_7', 'Node_8', 'Node_14', 'Node_13', 'Node_12', 'Node_16', 'Node_10', 'Node_0', 'Node_10', 'Node_0', 'Node_10'],
-					['Node_10', 'Node_16', 'Node_15', 'Node_18', 'Node_17', 'Node_16', 'Node_12', 'Node_13', 'Node_4', 'Node_5', 'Node_6', 'Node_0'], 
-					['Node_10', 'Node_16', 'Node_15', 'Node_18', 'Node_17', 'Node_16', 'Node_12', 'Node_13', 'Node_4', 'Node_2', 'Node_1', 'Node_0'], 
-					['Node_10', 'Node_16', 'Node_12', 'Node_22', 'Node_21', 'Node_20', 'Node_13', 'Node_14', 'Node_8', 'Node_7', 'Node_6', 'Node_0'], 
-					['Node_10', 'Node_16', 'Node_12', 'Node_13', 'Node_14', 'Node_19', 'Node_20', 'Node_13', 'Node_4', 'Node_5', 'Node_6', 'Node_0'], 
-					['Node_10', 'Node_16', 'Node_12', 'Node_13', 'Node_14', 'Node_19', 'Node_20', 'Node_13', 'Node_4', 'Node_2', 'Node_1', 'Node_0'], 
-					['Node_10', 'Node_16', 'Node_12', 'Node_22', 'Node_19', 'Node_20', 'Node_13', 'Node_14', 'Node_8', 'Node_7', 'Node_6', 'Node_0'],  
-					['Node_1', 'Node_3', 'Node_2', 'Node_4', 'Node_13', 'Node_12', 'Node_16', 'Node_17', 'Node_18', 'Node_15', 'Node_16', 'Node_10', 'Node_0'],
-					['Node_1', 'Node_3', 'Node_2', 'Node_4', 'Node_13', 'Node_20', 'Node_19', 'Node_14', 'Node_13', 'Node_12', 'Node_16', 'Node_10', 'Node_0'], 
-					['Node_6', 'Node_7', 'Node_8', 'Node_14', 'Node_13', 'Node_12', 'Node_16', 'Node_17', 'Node_18', 'Node_15', 'Node_16', 'Node_10', 'Node_0'],
-					['Node_10', 'Node_16', 'Node_15', 'Node_18', 'Node_17', 'Node_16', 'Node_12', 'Node_13', 'Node_14', 'Node_8', 'Node_7', 'Node_6', 'Node_0']] 
+					["Node_1", 'Node_3', "Node_2", "Node_4", "Node_5", "Node_6", "Node_0"]] 
 			  
 class Path: 
 	"""
@@ -170,27 +123,78 @@ class Path:
 		Allows us to rank this path based on current board conditions 
 		This is hard
 		"""
-		game.log("Calculating for path {}\n\n".format(str(self)))
-		monsters = game.get_all_monsters()
+		def weight_cal(monster, attack, speed, p_time, game):
+			hpl = hp_loss(monster, attack, speed)
+			R_gain, P_gain, S_gain, Spd_gain = gain(monster, attack, speed, game)
+			time = time_spend(monster, attack, speed)
+
+			score = (-.4) * hpl + 8 * (R_gain + P_gain + S_gain) + 100 * Spd_gain + (-.25) * time + p_time
+			# game.log(str(Spd_gain))
+			return score
+
+
+		def time_spend(monster, attack, speed):
+			# attack value is the corresponding resources you have
+			move_time = 7 - speed
+			kill_time = monster.health / attack
+
+			if move_time <= kill_time:
+				time = move_time
+			else:
+				time = kill_time
+			return time
+
+		def hp_loss(monster, attack, speed):
+			time = time_spend(monster, attack, speed)
+			hp_loss = monster.attack * time
+
+			return hp_loss
+
+		def gain(monster, attack, speed, game):
+			move_time = 7 - speed
+			kill_time = monster.health / attack
+
+			if move_time < kill_time:
+				R_gain = 0
+				P_gain = 0
+				S_gain = 0
+				Spd_gain = 0
+			else:
+				R_gain = monster.death_effects.rock
+				P_gain = monster.death_effects.paper
+				S_gain = monster.death_effects.scissors
+				Spd_gain = monster.death_effects.speed
+				#game.log("{0}, {1}, {2}, {3}, {4}".format(monster.name, R_gain, P_gain, S_gain, Spd_gain))
+
+			return R_gain, P_gain, S_gain, Spd_gain
+
+
+
+
+		#game.log("\n")
+		non_count = 0
 		my_monsters = []
 		for node in self.path_indices:
 			monster = game.get_monster(node)
-			if monster.name != "No Monster": 
-				my_monsters.append(game.get_monster(node))
+			if monster.name != "No Monster" and not monster.dead: 
+				my_monsters.append(monster)
+				# game.log("Node {}: {}".format(node, monster.name))
+			elif monster.name == 'No Monster' or monster.dead:
+				non_count +=1
 
-		# my_monsters[i].dead
+		p_time = non_count * (-5)
+
 		player = game.get_self()
-
 
 		weight_sum = 0
 
 		for monster in my_monsters:
 			stance = stance_counters[monster.stance]
-			if stance is 'Rock':
+			if stance == 'Rock':
 				attack = player.rock
-			elif stance is 'Paper':
+			elif stance == 'Paper':
 				attack = player.paper
-			elif stance is 'Scissors':
+			elif stance == 'Scissors':
 				attack = player.scissors
 
 			speed = player.speed
@@ -200,78 +204,24 @@ class Path:
 			num_S = player.scissors
 
 			if (10.3 / num_R) <= (7 - speed):
-				if monster.name is 'Paper 3':
+				if monster.name == 'Paper 3':
 					weight_sum +=10
-				elif monster.name is 'Scissors 21':
+				elif monster.name == 'Scissors 21':
 					weight_sum +=20
 			elif (7 / num_P) <= (7 - speed):
-				if monster.name is 'Paper 3':
+				if monster.name == 'Paper 3':
 					weight_sum += 10
-				elif monster.name is 'Scissors 21':
+				elif monster.name == 'Scissors 21':
 					weight_sum += 20
 			elif (12 / num_S) <= (7 - speed):
-				if monster.name is 'Paper 3':
+				if monster.name == 'Paper 3':
 					weight_sum += 10
-				elif monster.name is 'Scissors 21':
+				elif monster.name == 'Scissors 21':
 					weight_sum += 20
 
-			val = weight_cal(monster, attack, speed, game)
-			# game.log(str(monster.health / attack))
+			val = weight_cal(monster, attack, speed, p_time, game)
 			weight_sum = weight_sum + val
-		# game.log(str(weight_sum))
-		game.log("\n")
 		return weight_sum
-
-def weight_cal(monster, attack, speed, game):
-	hpl = hp_loss(monster, attack, speed)
-	R_gain, P_gain, S_gain, Spd_gain = gain(monster, attack, speed, game)
-	time = time_spend(monster, attack, speed)
-
-	score = (-10) * hpl + 3 * (R_gain + P_gain + S_gain) + 10000 * Spd_gain + (-2) * time
-
-	return score
-
-
-def time_spend(monster, attack, speed):
-	# attack value is the corresponding resources you have
-	move_time = 7 - speed
-	kill_time = monster.health / attack
-
-	if move_time <= kill_time:
-		time = move_time
-	else:
-		time = kill_time
-	return time
-
-def hp_loss(monster, attack, speed):
-	time = time_spend(monster, attack, speed)
-	hp_loss = monster.attack * time
-
-	return hp_loss
-
-def gain(monster, attack, speed, game):
-	move_time = 7 - speed
-	kill_time = monster.health / attack
-
-
-	if move_time < kill_time:
-		R_gain = 0
-		P_gain = 0
-		S_gain = 0
-		Spd_gain = 0
-	else:
-		R_gain = monster.death_effects.rock
-		P_gain = monster.death_effects.paper
-		S_gain = monster.death_effects.scissors
-		Spd_gain = monster.death_effects.speed
-		game.log("{0}, {1}, {2}, {3}, {4}".format(monster.name, R_gain, P_gain, S_gain, Spd_gain))
-
-	return R_gain, P_gain, S_gain, Spd_gain
-
-
-
-
-
 
 
 def get_player_strength(player, stance): 
